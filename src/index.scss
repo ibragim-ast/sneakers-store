@@ -1,8 +1,126 @@
+@import url("./assets/fonts/inter.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
 body {
   margin: 0;
-  font-family: system-ui;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #e7f6ff;
 }
 
+.wrapper {
+  background: #fff;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+
+  max-width: 1080px;
+  margin: 50px auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  margin-right: 15px;
+}
+
+.header__title {
+  text-transform: uppercase;
+}
+
+.header__description {
+  opacity: 0.5;
+}
+
+.headerRight {
+  display: flex;
+  margin-right: 60px;
+  gap: 30px;
+}
+
+.header__icon {
+  margin-right: 10px;
+}
+
+.content {
+  padding: 40px;
+}
+
+.content__title {
+  margin-bottom: 40px;
+}
+
+.sneakers {
+  display: flex;
+  gap: 30px;
+}
+
+.card {
+  border: 1px solid #f3f3f3;
+  padding: 30px;
+  width: 220px;
+  border-radius: 40px;
+}
+
+.card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__price-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__price-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.card__price {
+  font-size: 14px;
+}
+
+.card__button {
+  background: #fff;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.card__title {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
