@@ -1,25 +1,25 @@
-import React from "react";
+import styled from "./Header.module.scss";
 
-const Header = () => {
+const Header = ({ onClickCart }) => {
   return (
-    <header className="header">
-      <div className="headerLeft">
+    <header className={styled.header}>
+      <div className={styled.headerLeft}>
         <img
-          className="header__logo"
+          className={styled.header__logo}
           width={40}
           height={40}
           src="/img/logo.svg"
           alt="Logo"
         />
-        <div className="headerInfo">
-          <h3 className="header__title">C4 Sneakers</h3>
-          <p className="header__description">Магазин кроссовок</p>
+        <div className={styled.headerInfo}>
+          <h3 className={styled.header__title}>C4 Sneakers</h3>
+          <p className={styled.header__description}>Магазин кроссовок</p>
         </div>
       </div>
-      <ul className="headerRight">
-        <li>
+      <ul className={styled.headerRight}>
+        <li onClick={onClickCart}>
           <img
-            className="header__icon"
+            className={styled.header__icon}
             width={18}
             height={18}
             src="/img/cart.svg"
@@ -29,7 +29,7 @@ const Header = () => {
         </li>
         <li>
           <img
-            className="header__icon"
+            className={styled.header__icon}
             width={18}
             height={18}
             src="/img/favorite.svg"
@@ -39,7 +39,7 @@ const Header = () => {
         </li>
         <li>
           <img
-            className="header__icon"
+            className={styled.header__icon}
             width={18}
             height={18}
             src="/img/user.svg"

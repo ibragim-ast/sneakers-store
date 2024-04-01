@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  border-bottom: 1px solid #eaeaea;
+
+  span {
+    cursor: pointer;
+  }
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  margin-right: 15px;
+}
+
+.header__title {
+  text-transform: uppercase;
+}
+
+.header__description {
+  opacity: 0.5;
+}
+
+.headerRight {
+  display: flex;
+  margin-right: 60px;
+  gap: 30px;
+}
+
+.header__icon {
+  margin-right: 10px;
+}
