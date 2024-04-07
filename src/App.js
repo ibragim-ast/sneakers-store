@@ -67,17 +67,21 @@ function App() {
 
   const onAddToFavorite = async (obj) => {
     try {
-      if (favorites.find((favObj) => Number(favObj.id) === Number(obj.id))) {
-        axios.delete(`${FAVORITES_URL}/${obj.id}`);
-        setFavorites((prev) =>
-          prev.filter((item) => Number(item.id) !== Number(obj.id))
-        );
+      const isAlreadyInFavorites = favorites.some(
+        (favObj) => favObj.id === obj.id
+      );
+
+      if (isAlreadyInFavorites) {
+        // Удаление из избранного
+        await axios.delete(`${FAVORITES_URL}/${obj.id}`);
+        setFavorites((prev) => prev.filter((item) => item.id !== obj.id));
       } else {
+        // Добавление в избранное
         const { data } = await axios.post(FAVORITES_URL, obj);
         setFavorites((prev) => [...prev, data]);
       }
     } catch (error) {
-      alert("Не удалось добавить в фавориты");
+      alert("Не удалось выполнить операцию");
     }
   };
 
