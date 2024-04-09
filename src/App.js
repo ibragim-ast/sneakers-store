@@ -33,6 +33,17 @@ function App() {
     }, 1000);
   }, []);
 
+  useEffect(() => {
+    if (cartOpened) {
+      document.body.classList.add("no_scroll");
+    } else {
+      document.body.classList.remove("no_scroll");
+    }
+    return () => {
+      document.body.classList.remove("no_scroll");
+    };
+  }, [cartOpened]);
+
   const getSneakers = async () => {
     const itemsResponce = await axios.get(SNEAKERS_URL);
     setItems(itemsResponce.data);
@@ -72,11 +83,9 @@ function App() {
       );
 
       if (isAlreadyInFavorites) {
-        // Удаление из избранного
         await axios.delete(`${FAVORITES_URL}/${obj.id}`);
         setFavorites((prev) => prev.filter((item) => item.id !== obj.id));
       } else {
-        // Добавление в избранное
         const { data } = await axios.post(FAVORITES_URL, obj);
         setFavorites((prev) => [...prev, data]);
       }
@@ -95,7 +104,15 @@ function App() {
 
   return (
     <AppContext.Provider
-      value={{ cartItems, favorites, items, isItemAdded, onAddToFavorite }}
+      value={{
+        cartItems,
+        favorites,
+        items,
+        isItemAdded,
+        onAddToFavorite,
+        setCartItems,
+        setCartOpened,
+      }}
     >
       <div className="wrapper">
         {cartOpened && (

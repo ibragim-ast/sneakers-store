@@ -1,26 +1,20 @@
+import { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Info.module.scss";
+import AppContext from "../../context";
 
-const Info = ({ title, subtitle, pathTo }) => {
+const Info = ({ title, subtitle, image, pathTo }) => {
   const location = useLocation();
+  const { setCartOpened } = useContext(AppContext);
 
   return (
     <div className={styles.info}>
-      <img
-        src={
-          location.pathname === "/favorites"
-            ? "/img/favorites-empty.svg"
-            : location.pathname === "/orders"
-            ? "/img/orders-empty.svg"
-            : "/img/empty-cart.svg"
-        }
-        alt="Empty"
-      />
+      <img src={image} alt="Empty" />
       <h2>{title}</h2>
       <p>{subtitle}</p>
       <Link to={pathTo}>
-        <button>
-          <img src="/img/arrow-left" alt="Вернуться назад" />
+        <button onClick={() => setCartOpened(false)}>
+          <img src="/img/arrow-left.svg" alt="Вернуться назад" />
           Вернуться назад
         </button>
       </Link>
