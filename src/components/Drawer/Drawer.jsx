@@ -3,7 +3,9 @@ import Info from "../Info/Info";
 import styles from "./Drawer.module.scss";
 import AppContext from "../../context";
 import axios from "axios";
-import { ORDERS_URL } from "../../utils/constants";
+import { ORDERS_URL, CART_ITEMS_URL } from "../../utils/constants";
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const Drawer = ({ onCloseCart, onDelete }) => {
   const { cartItems, setCartItems } = useContext(AppContext);
@@ -20,9 +22,12 @@ const Drawer = ({ onCloseCart, onDelete }) => {
       setIsOrderComplete(true);
       setCartItems([]);
 
-      cartItems.forEach((obj) => {
-        axios.delete(`${SNEAKERS_URL}/${obj.id}`);
-      });
+      for (let i = 0; i < cartItems.length; i++) {
+        const item = cartItems[i];
+        await axios.delete(`${CART_ITEMS_URL}/${item.id}`);
+        await delay(1000);
+        setCartItems([]);
+      }
       setTimeout(() => {
         setIsOrderComplete(false);
         onCloseCart();

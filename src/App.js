@@ -60,11 +60,10 @@ function App() {
   };
 
   const onAddToCart = (obj) => {
-    if (cartItems.find((item) => Number(item.id) === Number(obj.id))) {
+    const existingItem = cartItems.find((cartItem) => cartItem.id === obj.id);
+    if (existingItem) {
       axios.delete(`${CART_ITEMS_URL}/${obj.id}`);
-      setCartItems((prev) =>
-        prev.filter((item) => Number(item.id) !== Number(obj.id))
-      );
+      setCartItems((prev) => prev.filter((cartItem) => cartItem.id !== obj.id));
     } else {
       axios.post(CART_ITEMS_URL, obj);
       setCartItems((prev) => [...prev, obj]);
@@ -99,7 +98,7 @@ function App() {
   };
 
   const isItemAdded = (id) => {
-    return cartItems.some((obj) => Number(obj.id) === Number(id));
+    return cartItems.some((obj) => obj.id === id);
   };
 
   return (
