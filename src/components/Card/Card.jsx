@@ -1,27 +1,16 @@
-import { useState } from "react";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import AppContext from "../../context";
 import ContentLoader from "react-content-loader";
 import styles from "./Card.module.scss";
 
-const Card = ({
-  id,
-  name,
-  price,
-  image,
-  onPlus,
-  favorited = false,
-  isLoading = false,
-}) => {
-  const { onAddToFavorite, isItemAdded } = useContext(AppContext);
-  const [isFavorite, setIsFavorite] = useState(favorited);
+const Card = ({ id, name, price, image, onPlus, isLoading = false }) => {
+  const { onAddToFavorite, isItemAdded, isFavorite } = useContext(AppContext);
 
   const handleClickPlus = () => {
     onPlus({ name, price, image, id });
   };
 
   const handleToFavouriteClick = () => {
-    setIsFavorite(!isFavorite);
     onAddToFavorite({ id, name, image, price });
   };
 
@@ -50,7 +39,7 @@ const Card = ({
           >
             <img
               src={
-                isFavorite
+                isFavorite(id)
                   ? "/img/favr-btn-icon-active.svg"
                   : "/img/favr-btn-icon.svg"
               }

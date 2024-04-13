@@ -75,21 +75,17 @@ function App() {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
-  const onAddToFavorite = async (obj) => {
-    try {
-      const isAlreadyInFavorites = favorites.some(
-        (favObj) => favObj.id === obj.id
-      );
+  const onAddToFavorite = (obj) => {
+    const isAlreadyInFavorites = favorites.find(
+      (favItem) => favItem.id === obj.id
+    );
 
-      if (isAlreadyInFavorites) {
-        await axios.delete(`${FAVORITES_URL}/${obj.id}`);
-        setFavorites((prev) => prev.filter((item) => item.id !== obj.id));
-      } else {
-        const { data } = await axios.post(FAVORITES_URL, obj);
-        setFavorites((prev) => [...prev, data]);
-      }
-    } catch (error) {
-      alert("Не удалось выполнить операцию");
+    if (isAlreadyInFavorites) {
+      axios.delete(`${FAVORITES_URL}/${obj.id}`);
+      setFavorites((prev) => prev.filter((item) => item.id !== obj.id));
+    } else {
+      axios.post(FAVORITES_URL, obj);
+      setFavorites((prev) => [...prev, obj]);
     }
   };
 
@@ -100,6 +96,9 @@ function App() {
   const isItemAdded = (id) => {
     return cartItems.some((obj) => obj.id === id);
   };
+  const isFavorite = (id) => {
+    return favorites.some((obj) => obj.id === id);
+  };
 
   return (
     <AppContext.Provider
@@ -108,6 +107,7 @@ function App() {
         favorites,
         items,
         isItemAdded,
+        isFavorite,
         onAddToFavorite,
         setCartItems,
         setCartOpened,
