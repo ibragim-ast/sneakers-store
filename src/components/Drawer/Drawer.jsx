@@ -1,17 +1,17 @@
-import { useState, useContext } from "react";
+import axios from "axios";
+import { useState } from "react";
 import Info from "../Info/Info";
 import styles from "./Drawer.module.scss";
-import AppContext from "../../context";
-import axios from "axios";
 import { ORDERS_URL, CART_ITEMS_URL } from "../../utils/constants";
+import { useCart } from "../../hooks/useCart";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const Drawer = ({ onCloseCart, onDelete }) => {
-  const { cartItems, setCartItems } = useContext(AppContext);
   const [isOrderComplete, setIsOrderComplete] = useState(false);
   const [orderId, setOrderId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const { totalPrice, cartItems, setCartItems } = useCart();
 
   const onClickOrder = async () => {
     try {
@@ -81,12 +81,12 @@ const Drawer = ({ onCloseCart, onDelete }) => {
               <li className={styles.drawer__list_item}>
                 <span>Итого:</span>
                 <div className={styles.drawer__line}></div>
-                <b>19 999 руб.</b>
+                <b>{totalPrice} руб.</b>
               </li>
               <li className={styles.drawer__list_item}>
-                <span>Налог:</span>
+                <span>Доставка:</span>
                 <div className={styles.drawer__line}></div>
-                <b>20 руб.</b>
+                <b>{((totalPrice / 100) * 3).toFixed(2)} руб.</b>
               </li>
             </ul>
             <button

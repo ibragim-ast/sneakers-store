@@ -6,12 +6,8 @@ import Home from "./pages/Home";
 import Drawer from "./components/Drawer/Drawer";
 import Favorites from "./pages/Favorites";
 import AppContext from "./context";
-import {
-  SNEAKERS_URL,
-  CART_ITEMS_URL,
-  FAVORITES_URL,
-  //ORDERS_URL,
-} from "./utils/constants";
+import { SNEAKERS_URL, CART_ITEMS_URL, FAVORITES_URL } from "./utils/constants";
+import Orders from "./pages/Orders";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -109,6 +105,7 @@ function App() {
         isItemAdded,
         isFavorite,
         onAddToFavorite,
+        onAddToCart,
         setCartItems,
         setCartOpened,
       }}
@@ -139,6 +136,7 @@ function App() {
             }
           />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/orders" element={<Orders />} />
         </Routes>
       </div>
     </AppContext.Provider>

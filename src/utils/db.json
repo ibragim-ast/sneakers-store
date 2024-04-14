@@ -2,13 +2,13 @@
   "items": [
     {
       "name": "Мужские Кроссовки Nike Blazer Mid Suede",
-      "price": "12 999",
+      "price": 12999,
       "image": "/img/sneakers/1.jpg",
       "id": "e515"
     },
     {
       "name": "Мужские Кроссовки Nike Air Max 270",
-      "price": "12 999",
+      "price": 12999,
       "image": "/img/sneakers/2.jpg",
       "id": "e516"
     },
@@ -20,31 +20,31 @@
     },
     {
       "name": "Кроссовки Puma X Aka Boku Future Rider",
-      "price": "8 999",
+      "price": 8999,
       "image": "/img/sneakers/4.jpg",
       "id": "e518"
     },
     {
       "name": "Мужские Кроссовки Under Armour Curry 8",
-      "price": "15 199",
+      "price": 15199,
       "image": "/img/sneakers/5.jpg",
       "id": "e519"
     },
     {
       "name": "Мужские Кроссовки Nike Kyrie 7",
-      "price": "11 299",
+      "price": 11299,
       "image": "/img/sneakers/6.jpg",
       "id": "97b1"
     },
     {
       "name": "Мужские Кроссовки Jordan Air Jordan 11",
-      "price": "10 799",
+      "price": 10799,
       "image": "/img/sneakers/7.jpg",
       "id": "e4a2"
     },
     {
       "name": "Мужские Кроссовки Nike Lebron XVIII Low",
-      "price": "13 999",
+      "price": 13999,
       "image": "/img/sneakers/8.jpg",
       "id": "bea9"
     }
@@ -53,72 +53,60 @@
   "favorite": [],
   "orders": [
     {
-      "id": "838b",
+      "id": "b465",
       "items": [
         {
+          "name": "Мужские Кроссовки Nike Blazer Mid Suede",
+          "price": 12999,
+          "image": "/img/sneakers/1.jpg",
+          "id": "e515"
+        },
+        {
           "name": "Мужские Кроссовки Nike Air Max 270",
-          "price": 15999,
+          "price": 12999,
           "image": "/img/sneakers/2.jpg",
-          "id": "77cd"
+          "id": "e516"
         },
         {
           "name": "Мужские Кроссовки Nike Blazer Mid Suede",
           "price": 8499,
           "image": "/img/sneakers/3.jpg",
-          "id": "81e2"
+          "id": "e517"
         },
         {
           "name": "Кроссовки Puma X Aka Boku Future Rider",
           "price": 8999,
           "image": "/img/sneakers/4.jpg",
-          "id": "2e8a"
+          "id": "e518"
         }
       ]
     },
     {
-      "id": "5e1e",
+      "id": "53b1",
       "items": [
         {
-          "id": "77cd",
-          "name": "Мужские Кроссовки Nike Air Max 270",
-          "price": 15999,
-          "image": "/img/sneakers/2.jpg"
-        },
-        {
-          "id": "81e2",
-          "name": "Мужские Кроссовки Nike Blazer Mid Suede",
-          "price": 8499,
-          "image": "/img/sneakers/3.jpg"
-        },
-        {
-          "id": "2e8a",
-          "name": "Кроссовки Puma X Aka Boku Future Rider",
-          "price": 8999,
-          "image": "/img/sneakers/4.jpg"
-        },
-        {
-          "id": "e515",
           "name": "Мужские Кроссовки Under Armour Curry 8",
           "price": 15199,
-          "image": "/img/sneakers/1.jpg"
+          "image": "/img/sneakers/5.jpg",
+          "id": "e519"
         },
         {
-          "id": "e515",
-          "name": "Мужские Кроссовки Under Armour Curry 8",
-          "price": 15199,
-          "image": "/img/sneakers/2.jpg"
+          "name": "Мужские Кроссовки Nike Kyrie 7",
+          "price": 11299,
+          "image": "/img/sneakers/6.jpg",
+          "id": "97b1"
         },
         {
-          "id": "e515",
-          "name": "Мужские Кроссовки Under Armour Curry 8",
-          "price": 15199,
-          "image": "/img/sneakers/3.jpg"
+          "name": "Мужские Кроссовки Jordan Air Jordan 11",
+          "price": 10799,
+          "image": "/img/sneakers/7.jpg",
+          "id": "e4a2"
         },
         {
-          "id": "e515",
-          "name": "Мужские Кроссовки Under Armour Curry 8",
-          "price": 15199,
-          "image": "/img/sneakers/4.jpg"
+          "name": "Мужские Кроссовки Nike Lebron XVIII Low",
+          "price": 13999,
+          "image": "/img/sneakers/8.jpg",
+          "id": "bea9"
         }
       ]
     }

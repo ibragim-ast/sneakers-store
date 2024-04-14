@@ -1,10 +1,12 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import AppContext from "../../context";
 import ContentLoader from "react-content-loader";
 import styles from "./Card.module.scss";
+import { useLocation } from "react-router-dom";
 
 const Card = ({ id, name, price, image, onPlus, isLoading = false }) => {
   const { onAddToFavorite, isItemAdded, isFavorite } = useContext(AppContext);
+  const location = useLocation();
 
   const handleClickPlus = () => {
     onPlus({ name, price, image, id });
@@ -33,19 +35,21 @@ const Card = ({ id, name, price, image, onPlus, isLoading = false }) => {
         </ContentLoader>
       ) : (
         <>
-          <div
-            onClick={handleToFavouriteClick}
-            className={styles.card__favorite}
-          >
-            <img
-              src={
-                isFavorite(id)
-                  ? "/img/favr-btn-icon-active.svg"
-                  : "/img/favr-btn-icon.svg"
-              }
-              alt="Add to Favorite"
-            />
-          </div>
+          {location.pathname !== "/orders" && (
+            <div
+              onClick={handleToFavouriteClick}
+              className={styles.card__favorite}
+            >
+              <img
+                src={
+                  isFavorite(id)
+                    ? "/img/favr-btn-icon-active.svg"
+                    : "/img/favr-btn-icon.svg"
+                }
+                alt="Add to Favorite"
+              />
+            </div>
+          )}
 
           <img width="100%" height={135} src={image} alt="" />
           <h5>{name}</h5>
@@ -54,12 +58,16 @@ const Card = ({ id, name, price, image, onPlus, isLoading = false }) => {
               <span>Цена:</span>
               <b>{price} руб.</b>
             </div>
-            <img
-              className={styles.plus}
-              src={isItemAdded(id) ? "/img/plus-checked.svg" : "/img/plus.svg"}
-              alt="Добавить в корзину"
-              onClick={handleClickPlus}
-            />
+            {onPlus && (
+              <img
+                className={styles.plus}
+                src={
+                  isItemAdded(id) ? "/img/plus-checked.svg" : "/img/plus.svg"
+                }
+                alt="Добавить в корзину"
+                onClick={handleClickPlus}
+              />
+            )}
           </div>
         </>
       )}
