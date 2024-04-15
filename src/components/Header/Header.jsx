@@ -7,7 +7,7 @@ const Header = ({ onClickCart }) => {
 
   return (
     <header className={styled.header}>
-      <Link to="/">
+      <Link to="/sneakers-store">
         <div className={styled.headerLeft}>
           <img
             className={styled.header__logo}
