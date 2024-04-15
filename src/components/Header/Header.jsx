@@ -54,7 +54,7 @@ const Header = ({ onClickCart }) => {
               src="/img/user.svg"
               alt="Logo"
             />
-            <span>Профиль </span>
+            <span>Заказы</span>
           </Link>
         </li>
       </ul>

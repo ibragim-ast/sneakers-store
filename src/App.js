@@ -41,18 +41,30 @@ function App() {
   }, [cartOpened]);
 
   const getSneakers = async () => {
-    const itemsResponce = await axios.get(SNEAKERS_URL);
-    setItems(itemsResponce.data);
+    try {
+      const itemsResponce = await axios.get(SNEAKERS_URL);
+      setItems(itemsResponce.data);
+    } catch (error) {
+      console.log("Ошибка при запросе всех товаров", error);
+    }
   };
 
   const getCartItems = async () => {
-    const cartResponce = await axios.get(CART_ITEMS_URL);
-    setCartItems(cartResponce.data);
+    try {
+      const cartResponce = await axios.get(CART_ITEMS_URL);
+      setCartItems(cartResponce.data);
+    } catch (error) {
+      console.log("Ошибка при запросе данных корзины", error);
+    }
   };
 
   const getFavorites = async (obj) => {
-    const favoritesResponce = await axios.get(FAVORITES_URL);
-    setFavorites(favoritesResponce.data);
+    try {
+      const favoritesResponce = await axios.get(FAVORITES_URL);
+      setFavorites(favoritesResponce.data);
+    } catch (error) {
+      console.log("Ошибка при запросе избранных товаров", error);
+    }
   };
 
   const onAddToCart = (obj) => {
@@ -66,22 +78,30 @@ function App() {
     }
   };
 
-  const onRemoveItem = (id) => {
-    axios.delete(`${CART_ITEMS_URL}/${id}`);
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
+  const onRemoveItem = async (id) => {
+    try {
+      await axios.delete(`${CART_ITEMS_URL}/${id}`);
+      setCartItems((prev) => prev.filter((item) => item.id !== id));
+    } catch (error) {
+      console.log("Не удалось удалить из корзины", error);
+    }
   };
 
-  const onAddToFavorite = (obj) => {
-    const isAlreadyInFavorites = favorites.find(
-      (favItem) => favItem.id === obj.id
-    );
+  const onAddToFavorite = async (obj) => {
+    try {
+      const isAlreadyInFavorites = favorites.find(
+        (favItem) => favItem.id === obj.id
+      );
 
-    if (isAlreadyInFavorites) {
-      axios.delete(`${FAVORITES_URL}/${obj.id}`);
-      setFavorites((prev) => prev.filter((item) => item.id !== obj.id));
-    } else {
-      axios.post(FAVORITES_URL, obj);
-      setFavorites((prev) => [...prev, obj]);
+      if (isAlreadyInFavorites) {
+        await axios.delete(`${FAVORITES_URL}/${obj.id}`);
+        setFavorites((prev) => prev.filter((item) => item.id !== obj.id));
+      } else {
+        await axios.post(FAVORITES_URL, obj);
+        setFavorites((prev) => [...prev, obj]);
+      }
+    } catch (error) {
+      console.log("Не удалось добавить в избранное", error);
     }
   };
 
@@ -111,13 +131,12 @@ function App() {
       }}
     >
       <div className="wrapper">
-        {cartOpened && (
-          <Drawer
-            cartItems={cartItems}
-            onCloseCart={() => setCartOpened(false)}
-            onDelete={onRemoveItem}
-          />
-        )}
+        <Drawer
+          cartItems={cartItems}
+          onCloseCart={() => setCartOpened(false)}
+          onDelete={onRemoveItem}
+          opened={cartOpened}
+        />
 
         <Header onClickCart={() => setCartOpened(true)} />
         <Routes>

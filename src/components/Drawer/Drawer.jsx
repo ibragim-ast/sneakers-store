@@ -7,7 +7,7 @@ import { useCart } from "../../hooks/useCart";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const Drawer = ({ onCloseCart, onDelete }) => {
+const Drawer = ({ onCloseCart, onDelete, opened }) => {
   const [isOrderComplete, setIsOrderComplete] = useState(false);
   const [orderId, setOrderId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -39,7 +39,7 @@ const Drawer = ({ onCloseCart, onDelete }) => {
   };
 
   return (
-    <div className={styles.overlay}>
+    <div className={opened ? styles.overlay : styles.overlay_hidden}>
       <div className={styles.drawer}>
         <div className={styles.drawer__header}>
           <h2>Корзина </h2>

@@ -7,13 +7,14 @@ import { useLocation } from "react-router-dom";
 const Card = ({ id, name, price, image, onPlus, isLoading = false }) => {
   const { onAddToFavorite, isItemAdded, isFavorite } = useContext(AppContext);
   const location = useLocation();
+  const obj = { id, name, price, image };
 
   const handleClickPlus = () => {
-    onPlus({ name, price, image, id });
+    onPlus(obj);
   };
 
   const handleToFavouriteClick = () => {
-    onAddToFavorite({ id, name, image, price });
+    onAddToFavorite(obj);
   };
 
   return (

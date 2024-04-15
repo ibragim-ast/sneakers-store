@@ -16,11 +16,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm:react-start\" \"npm:server-start\"",
+    "react-start": "react-scripts start",
+    "server-start": "json-server --watch src/utils/db.json routes.json -p 3001",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch src/utils/db.json routes.json -p 3001"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +44,8 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
+    "gh-pages": "^6.1.1",
     "json-server": "^1.0.0-alpha.23"
   }
 }
