@@ -15,7 +15,7 @@ const Home = ({
 
     return (isLoading ? [...Array(12)] : filteredItems).map((item, index) => (
       <Card
-        key={item ? item.id || index : index} // Добавляем проверку на существование item
+        key={item ? item.id || index : index}
         onPlus={(obj) => onAddToCart(obj)}
         {...item}
         isLoading={isLoading}
@@ -30,7 +30,7 @@ const Home = ({
           {searchValue ? `Поиск по запросу: ${searchValue}` : "Все кроссовки"}
         </h1>
         <div className="content__search-block">
-          <img src="img/search-icon.svg" alt="Search" />
+          <img src="img/search.svg" alt="Search" />
           <input
             value={searchValue}
             className="content__input"
