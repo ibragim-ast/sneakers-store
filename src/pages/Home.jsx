@@ -30,7 +30,7 @@ const Home = ({
           {searchValue ? `Поиск по запросу: ${searchValue}` : "Все кроссовки"}
         </h1>
         <div className="content__search-block">
-          <img src="/img/search-icon.svg" alt="Search" />
+          <img src="img/search-icon.svg" alt="Search" />
           <input
             value={searchValue}
             className="content__input"
@@ -41,7 +41,7 @@ const Home = ({
           {searchValue ? (
             <img
               className="cart-item__remove-btn"
-              src="/img/btn-remove.svg"
+              src="img/btn-remove.svg"
               alt="Очистить инпут"
               onClick={() => setSearchValue("")}
             />

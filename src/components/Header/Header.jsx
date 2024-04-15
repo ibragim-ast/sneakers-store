@@ -13,7 +13,7 @@ const Header = ({ onClickCart }) => {
             className={styled.header__logo}
             width={40}
             height={40}
-            src="/img/logo.svg"
+            src="img/logo.svg"
             alt="Logo"
           />
           <div className={styled.headerInfo}>
@@ -28,18 +28,18 @@ const Header = ({ onClickCart }) => {
             className={styled.header__icon}
             width={18}
             height={18}
-            src="/img/cart.svg"
+            src="img/cart.svg"
             alt="Logo"
           />
           <span>{totalPrice} руб.</span>
         </li>
         <li>
-          <Link to="/favorites">
+          <Link to="favorites">
             <img
               className={styled.header__icon}
               width={18}
               height={18}
-              src="/img/favorite.svg"
+              src="img/favorite.svg"
               alt="Logo"
             />
             <span>Избранное</span>
@@ -51,7 +51,7 @@ const Header = ({ onClickCart }) => {
               className={styled.header__icon}
               width={18}
               height={18}
-              src="/img/user.svg"
+              src="img/user.svg"
               alt="Logo"
             />
             <span>Заказы</span>

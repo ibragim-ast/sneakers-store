@@ -14,7 +14,7 @@ const Info = ({ title, subtitle, image, pathTo }) => {
       <p>{subtitle}</p>
       <Link to={pathTo}>
         <button onClick={() => setCartOpened(false)}>
-          <img src="/img/arrow-left.svg" alt="Вернуться назад" />
+          <img src="img/arrow-left.svg" alt="Вернуться назад" />
           Вернуться назад
         </button>
       </Link>

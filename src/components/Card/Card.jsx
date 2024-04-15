@@ -44,8 +44,8 @@ const Card = ({ id, name, price, image, onPlus, isLoading = false }) => {
               <img
                 src={
                   isFavorite(id)
-                    ? "/img/favr-btn-icon-active.svg"
-                    : "/img/favr-btn-icon.svg"
+                    ? "img/favr-btn-icon-active.svg"
+                    : "img/favr-btn-icon.svg"
                 }
                 alt="Add to Favorite"
               />
@@ -62,9 +62,7 @@ const Card = ({ id, name, price, image, onPlus, isLoading = false }) => {
             {onPlus && (
               <img
                 className={styles.plus}
-                src={
-                  isItemAdded(id) ? "/img/plus-checked.svg" : "/img/plus.svg"
-                }
+                src={isItemAdded(id) ? "img/plus-checked.svg" : "img/plus.svg"}
                 alt="Добавить в корзину"
                 onClick={handleClickPlus}
               />
