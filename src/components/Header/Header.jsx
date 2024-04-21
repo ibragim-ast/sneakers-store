@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
-import styled from "./Header.module.scss";
 import { useCart } from "../../hooks/useCart";
+import styled from "./Header.module.scss";
+import logo from "../../images/logo.svg";
+import cartIcon from "../../images/cart.svg";
+import favoriteIcon from "../../images/favorite.svg";
+import ordersIcon from "../../images/user.svg";
 
 const Header = ({ onClickCart }) => {
   const { totalPrice } = useCart();
@@ -13,7 +17,7 @@ const Header = ({ onClickCart }) => {
             className={styled.header__logo}
             width={40}
             height={40}
-            src="img/logo.svg"
+            src={logo}
             alt="Logo"
           />
           <div className={styled.headerInfo}>
@@ -28,7 +32,7 @@ const Header = ({ onClickCart }) => {
             className={styled.header__icon}
             width={18}
             height={18}
-            src="img/cart.svg"
+            src={cartIcon}
             alt="Logo"
           />
           <span>{totalPrice} руб.</span>
@@ -39,7 +43,7 @@ const Header = ({ onClickCart }) => {
               className={styled.header__icon}
               width={18}
               height={18}
-              src="img/favorite.svg"
+              src={favoriteIcon}
               alt="Logo"
             />
             <span>Избранное</span>
@@ -51,7 +55,7 @@ const Header = ({ onClickCart }) => {
               className={styled.header__icon}
               width={18}
               height={18}
-              src="img/user.svg"
+              src={ordersIcon}
               alt="Logo"
             />
             <span>Заказы</span>

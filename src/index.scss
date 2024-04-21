@@ -1,7 +1,6 @@
 @import url("./assets/fonts/inter.css");
 
 * {
-  margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: none;
@@ -22,7 +21,8 @@ li {
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1080px;
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -43,9 +43,10 @@ body {
 }
 
 .content__container {
+  max-width: 960px;
+  margin: 20px auto;
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
   justify-content: space-between;
 }
 
@@ -66,5 +67,7 @@ body {
 .sneakers {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 40px;
+  max-width: 960px;
+  margin: 0 auto;
 }

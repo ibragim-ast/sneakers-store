@@ -1,51 +1,51 @@
 {
   "items": [
     {
-      "name": "Мужские Кроссовки Nike Blazer Mid Suede",
+      "name": "Мужские Кроссовки Abibas Stealth Stride",
       "price": 12999,
-      "image": "img/sneakers/1.jpg",
+      "image": "https://i.ibb.co/mFcNyJ0/1.jpg",
       "id": "e515"
     },
     {
-      "name": "Мужские Кроссовки Nike Air Max 270",
+      "name": "Мужские Кроссовки Like Lunar Runners",
       "price": 12999,
-      "image": "img/sneakers/2.jpg",
+      "image": "https://i.ibb.co/q7DWHsG/2.jpg",
       "id": "e516"
     },
     {
-      "name": "Мужские Кроссовки Nike Blazer Mid Suede",
+      "name": "Мужские Кроссовки Like Velocity Sprint X",
       "price": 8499,
-      "image": "img/sneakers/3.jpg",
+      "image": "https://i.ibb.co/5YxbHvd/3.jpg",
       "id": "e517"
     },
     {
-      "name": "Кроссовки Puma X Aka Boku Future Rider",
+      "name": "Кроссовки Puma Gravity Glide",
       "price": 8999,
-      "image": "img/sneakers/4.jpg",
+      "image": "https://i.ibb.co/6Rfhfrd/4.jpg",
       "id": "e518"
     },
     {
-      "name": "Мужские Кроссовки Under Armour Curry 8",
+      "name": "Мужские Кроссовки Under Nova Boost",
       "price": 15199,
-      "image": "img/sneakers/5.jpg",
+      "image": "https://i.ibb.co/8gP9X8V/5.jpg",
       "id": "e519"
     },
     {
-      "name": "Мужские Кроссовки Nike Kyrie 7",
+      "name": "Мужские Кроссовки Like Eclipse Pace",
       "price": 11299,
-      "image": "img/sneakers/6.jpg",
+      "image": "https://i.ibb.co/nPfS3Lj/6.jpg",
       "id": "97b1"
     },
     {
-      "name": "Мужские Кроссовки Jordan Air Jordan 11",
+      "name": "Мужские Кроссовки Jordan Blaze Runner",
       "price": 10799,
-      "image": "img/sneakers/7.jpg",
+      "image": "https://i.ibb.co/CPx0p5N/7.jpg",
       "id": "e4a2"
     },
     {
-      "name": "Мужские Кроссовки Nike Lebron XVIII Low",
+      "name": "Мужские Кроссовки Like Infinity Stride",
       "price": 13999,
-      "image": "img/sneakers/8.jpg",
+      "image": "https://i.ibb.co/m9857gb/8.jpg",
       "id": "bea9"
     }
   ],

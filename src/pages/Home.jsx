@@ -1,4 +1,6 @@
 import Card from "../components/Card/Card";
+import searchIcon from "../images/search.svg";
+import Slider from "../components/Slider/Slider";
 
 const Home = ({
   searchValue,
@@ -25,12 +27,13 @@ const Home = ({
 
   return (
     <div className="content">
+      <Slider />
       <div className="content__container">
         <h1 className="content__title">
           {searchValue ? `Поиск по запросу: ${searchValue}` : "Все кроссовки"}
         </h1>
         <div className="content__search-block">
-          <img src="img/search.svg" alt="Search" />
+          <img src={searchIcon} alt="Search" />
           <input
             value={searchValue}
             className="content__input"

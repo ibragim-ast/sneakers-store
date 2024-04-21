@@ -4,6 +4,10 @@ import Info from "../Info/Info";
 import styles from "./Drawer.module.scss";
 import { ORDERS_URL, CART_ITEMS_URL } from "../../utils/constants";
 import { useCart } from "../../hooks/useCart";
+import closeCartIcon from "../../images/btn-remove.svg";
+import emptyCartImg from "../../images/empty-cart.svg";
+import completeOrderImg from "../../images/complete-order.svg";
+import arrowRight from "../../images/arrow-right.svg";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -45,7 +49,7 @@ const Drawer = ({ onCloseCart, onDelete, opened }) => {
           <h2>Корзина </h2>
           <img
             className={styles.cart__remove}
-            src="img/btn-remove.svg"
+            src={closeCartIcon}
             alt="Close"
             onClick={onCloseCart}
           />
@@ -70,7 +74,7 @@ const Drawer = ({ onCloseCart, onDelete, opened }) => {
                   <img
                     onClick={() => onDelete(obj.id)}
                     className={styles.cart_item__remove_btn}
-                    src="img/btn-remove.svg"
+                    src={closeCartIcon}
                     alt="Удалить из корзины"
                   />
                 </div>
@@ -97,7 +101,7 @@ const Drawer = ({ onCloseCart, onDelete, opened }) => {
               Оформить заказ{" "}
               <img
                 className={styles.drawer__btn_arrow}
-                src="img/arrow.svg"
+                src={arrowRight}
                 alt="arrow"
               />
             </button>
@@ -110,9 +114,7 @@ const Drawer = ({ onCloseCart, onDelete, opened }) => {
                 ? `Ваш заказ #${orderId} скоро будет передан курьерской службе`
                 : "Добавьте пару кроссовок"
             }
-            image={
-              isOrderComplete ? "img/complete-order.svg" : "img/empty-cart.svg"
-            }
+            image={isOrderComplete ? completeOrderImg : emptyCartImg}
           />
         )}
       </div>

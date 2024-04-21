@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./Info.module.scss";
 import AppContext from "../../context";
+import arrowLeft from "../../images/arrow-left.svg";
 
 const Info = ({ title, subtitle, image, pathTo }) => {
-  const location = useLocation();
   const { setCartOpened } = useContext(AppContext);
 
   return (
@@ -14,7 +14,7 @@ const Info = ({ title, subtitle, image, pathTo }) => {
       <p>{subtitle}</p>
       <Link to={pathTo}>
         <button onClick={() => setCartOpened(false)}>
-          <img src="img/arrow-left.svg" alt="Вернуться назад" />
+          <img src={arrowLeft} alt="Вернуться назад" />
           Вернуться назад
         </button>
       </Link>

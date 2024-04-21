@@ -3,6 +3,10 @@ import AppContext from "../../context";
 import ContentLoader from "react-content-loader";
 import styles from "./Card.module.scss";
 import { useLocation } from "react-router-dom";
+import favoriteIcon from "../../images/favr-btn-icon.svg";
+import favoriteIconActive from "../../images/favr-btn-icon-active.svg";
+import addToCartIcon from "../../images/plus.svg";
+import addToCartIconActive from "../../images/plus-checked.svg";
 
 const Card = ({ id, name, price, image, onPlus, isLoading = false }) => {
   const { onAddToFavorite, isItemAdded, isFavorite } = useContext(AppContext);
@@ -42,17 +46,13 @@ const Card = ({ id, name, price, image, onPlus, isLoading = false }) => {
               className={styles.card__favorite}
             >
               <img
-                src={
-                  isFavorite(id)
-                    ? "img/favr-btn-icon-active.svg"
-                    : "img/favr-btn-icon.svg"
-                }
+                src={isFavorite(id) ? favoriteIconActive : favoriteIcon}
                 alt="Add to Favorite"
               />
             </div>
           )}
 
-          <img width="100%" height={135} src={image} alt="" />
+          <img className={styles.card__image} src={image} alt="sneakers" />
           <h5>{name}</h5>
           <div className={styles.card__bottom}>
             <div className={styles.card__price_container}>
@@ -62,7 +62,7 @@ const Card = ({ id, name, price, image, onPlus, isLoading = false }) => {
             {onPlus && (
               <img
                 className={styles.plus}
-                src={isItemAdded(id) ? "img/plus-checked.svg" : "img/plus.svg"}
+                src={isItemAdded(id) ? addToCartIconActive : addToCartIcon}
                 alt="Добавить в корзину"
                 onClick={handleClickPlus}
               />
