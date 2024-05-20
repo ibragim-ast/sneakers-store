@@ -1,16 +1,16 @@
 import styles from "./Slider.scss";
-import banner from "../../images/banner.jpeg";
+import sliderLogo from "../../images/slider-logo.svg";
 
 function Slider() {
   return (
-    <section className="slider">
+    <section className={styles.slider}>
       <div className="slider__container">
         <div className="slider__text-block">
           <div className="slider__link">
-            <img alt="logotype" width={120} height={40} src={banner} />
+            <img alt="logotype" width={120} height={40} src={sliderLogo} />
           </div>
           <h2 className="slider__title">
-            <span className="slider__title-span">John Smith</span>Forever!
+            <span className="slider__title-span">Stan Smith</span>Forever!
           </h2>
           <button className="slider__button">Купить</button>
         </div>

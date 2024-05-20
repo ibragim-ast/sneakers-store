@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import Card from "../components/Card/Card";
 import { ORDERS_URL } from "../utils/constants";
-import axios from "axios";
+import Info from "../components/Info/Info";
+import emptyOrdersSmile from "../images/orders-empty.svg";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -21,15 +23,25 @@ const Orders = () => {
 
   return (
     <div className="content">
-      <div>
-        <h1>Мои заказы</h1>
-      </div>
-
-      <div className="sneakers">
-        {(isLoading ? [...Array(8)] : orders).map((item, index) => (
-          <Card key={index} isLoading={isLoading} {...item} />
-        ))}
-      </div>
+      {orders.length ? (
+        <>
+          <div>
+            <h1>Мои заказы</h1>
+          </div>
+          <div className="sneakers">
+            {(isLoading ? [...Array(8)] : orders).map((item, index) => (
+              <Card key={index} isLoading={isLoading} {...item} />
+            ))}
+          </div>
+        </>
+      ) : (
+        <Info
+          title="Заказов пока нет"
+          subtitle="Добавьте хотя бы один заказ"
+          image={emptyOrdersSmile}
+          pathTo="/sneakers-store"
+        />
+      )}
     </div>
   );
 };

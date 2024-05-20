@@ -4,16 +4,19 @@
   flex: 1;
   align-items: center;
   justify-content: center;
+  margin: auto;
+  min-height: 100vh;
 
   img {
     margin-bottom: 20px;
-    width: 120px;
-    height: 120px;
+    width: 70px;
+    height: 70px;
   }
 
   h2 {
     font-size: 24px;
     font-weight: 600;
+    margin-top: 30px;
     margin-bottom: 10px;
   }
 
@@ -21,7 +24,8 @@
     opacity: 0.4;
     text-align: center;
     font-size: 16px;
-    margin-bottom: 120px;
+    margin-top: 0;
+    margin-bottom: 70px;
   }
 
   button {

@@ -53,4 +53,10 @@
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.slider__button:hover {
+  background: #8bb43c;
 }
